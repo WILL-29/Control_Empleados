@@ -52,6 +52,7 @@
             this.Estado_TB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.FotoSel_BT = new System.Windows.Forms.Button();
+            this.Registrar_BT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,21 +71,24 @@
             this.pictureBox1.Location = new System.Drawing.Point(28, 31);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(125, 139);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // ID_TB
             // 
+            this.ID_TB.Enabled = false;
             this.ID_TB.Location = new System.Drawing.Point(294, 24);
             this.ID_TB.Name = "ID_TB";
-            this.ID_TB.Size = new System.Drawing.Size(111, 20);
+            this.ID_TB.ReadOnly = true;
+            this.ID_TB.Size = new System.Drawing.Size(147, 20);
             this.ID_TB.TabIndex = 2;
             // 
             // Ced_TB
             // 
             this.Ced_TB.Location = new System.Drawing.Point(294, 51);
             this.Ced_TB.Name = "Ced_TB";
-            this.Ced_TB.Size = new System.Drawing.Size(111, 20);
+            this.Ced_TB.Size = new System.Drawing.Size(147, 20);
             this.Ced_TB.TabIndex = 4;
             // 
             // Ced_LB
@@ -100,7 +104,7 @@
             // 
             this.Nombre_TB.Location = new System.Drawing.Point(294, 77);
             this.Nombre_TB.Name = "Nombre_TB";
-            this.Nombre_TB.Size = new System.Drawing.Size(111, 20);
+            this.Nombre_TB.Size = new System.Drawing.Size(147, 20);
             this.Nombre_TB.TabIndex = 6;
             // 
             // Nombre_LB
@@ -125,7 +129,7 @@
             // 
             this.Direccion_TB.Location = new System.Drawing.Point(294, 128);
             this.Direccion_TB.Name = "Direccion_TB";
-            this.Direccion_TB.Size = new System.Drawing.Size(111, 20);
+            this.Direccion_TB.Size = new System.Drawing.Size(147, 20);
             this.Direccion_TB.TabIndex = 10;
             // 
             // Direccion_LB
@@ -142,14 +146,14 @@
             this.FechaNac_Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.FechaNac_Date.Location = new System.Drawing.Point(294, 102);
             this.FechaNac_Date.Name = "FechaNac_Date";
-            this.FechaNac_Date.Size = new System.Drawing.Size(111, 20);
+            this.FechaNac_Date.Size = new System.Drawing.Size(147, 20);
             this.FechaNac_Date.TabIndex = 11;
             // 
             // Departa_TB
             // 
             this.Departa_TB.Location = new System.Drawing.Point(294, 159);
             this.Departa_TB.Name = "Departa_TB";
-            this.Departa_TB.Size = new System.Drawing.Size(111, 20);
+            this.Departa_TB.Size = new System.Drawing.Size(147, 20);
             this.Departa_TB.TabIndex = 13;
             // 
             // Depart_LB
@@ -165,7 +169,7 @@
             // 
             this.Puesto_TB.Location = new System.Drawing.Point(294, 184);
             this.Puesto_TB.Name = "Puesto_TB";
-            this.Puesto_TB.Size = new System.Drawing.Size(111, 20);
+            this.Puesto_TB.Size = new System.Drawing.Size(147, 20);
             this.Puesto_TB.TabIndex = 15;
             // 
             // Puesto_LB
@@ -182,7 +186,7 @@
             this.FechaIng_Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.FechaIng_Date.Location = new System.Drawing.Point(294, 243);
             this.FechaIng_Date.Name = "FechaIng_Date";
-            this.FechaIng_Date.Size = new System.Drawing.Size(111, 20);
+            this.FechaIng_Date.Size = new System.Drawing.Size(147, 20);
             this.FechaIng_Date.TabIndex = 17;
             // 
             // FechaIng_LB
@@ -198,7 +202,7 @@
             // 
             this.Supervi_TB.Location = new System.Drawing.Point(294, 214);
             this.Supervi_TB.Name = "Supervi_TB";
-            this.Supervi_TB.Size = new System.Drawing.Size(111, 20);
+            this.Supervi_TB.Size = new System.Drawing.Size(147, 20);
             this.Supervi_TB.TabIndex = 19;
             // 
             // Supervi_LB
@@ -214,7 +218,7 @@
             // 
             this.Sueldo_TB.Location = new System.Drawing.Point(294, 271);
             this.Sueldo_TB.Name = "Sueldo_TB";
-            this.Sueldo_TB.Size = new System.Drawing.Size(111, 20);
+            this.Sueldo_TB.Size = new System.Drawing.Size(147, 20);
             this.Sueldo_TB.TabIndex = 21;
             // 
             // Sueldo_LB
@@ -230,7 +234,7 @@
             // 
             this.Estado_TB.Location = new System.Drawing.Point(294, 300);
             this.Estado_TB.Name = "Estado_TB";
-            this.Estado_TB.Size = new System.Drawing.Size(111, 20);
+            this.Estado_TB.Size = new System.Drawing.Size(147, 20);
             this.Estado_TB.TabIndex = 23;
             // 
             // label1
@@ -252,11 +256,22 @@
             this.FotoSel_BT.UseVisualStyleBackColor = true;
             this.FotoSel_BT.Click += new System.EventHandler(this.button1_Click);
             // 
+            // Registrar_BT
+            // 
+            this.Registrar_BT.Location = new System.Drawing.Point(28, 223);
+            this.Registrar_BT.Name = "Registrar_BT";
+            this.Registrar_BT.Size = new System.Drawing.Size(125, 23);
+            this.Registrar_BT.TabIndex = 25;
+            this.Registrar_BT.Text = "Registrar Empleados";
+            this.Registrar_BT.UseVisualStyleBackColor = true;
+            this.Registrar_BT.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(453, 398);
+            this.Controls.Add(this.Registrar_BT);
             this.Controls.Add(this.FotoSel_BT);
             this.Controls.Add(this.Estado_TB);
             this.Controls.Add(this.label1);
@@ -315,6 +330,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button FotoSel_BT;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Registrar_BT;
     }
 }
 
