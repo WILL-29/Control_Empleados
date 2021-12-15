@@ -71,6 +71,7 @@
     <Compile Include="Model\Empleado.cs">
       <DependentUpon>ModeloRRHH.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Methods.cs" />
     <Compile Include="Model\ModeloRRHH.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

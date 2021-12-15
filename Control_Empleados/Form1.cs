@@ -20,6 +20,9 @@ namespace Control_Empleados
             InitializeComponent();
         }
 
+
+
+
         //Aquí declarará todas las variables globales que necesite
         //int IDRowSelected;
         string RutaFoto;
