@@ -21,7 +21,7 @@ namespace Control_Empleados
         }
 
         //Aquí declarará todas las variables globales que necesite
-        int IDRowSelected;
+        //int IDRowSelected;
         string RutaFoto;
         private void button1_Click(object sender, EventArgs e)
         {
@@ -72,6 +72,7 @@ namespace Control_Empleados
             int n = e.RowIndex;
             if (n > -1)
             {
+
                 Ced_TB.Text = dataGridView1.Rows[n].Cells[1].Value.ToString();
                 Nombre_TB.Text = dataGridView1.Rows[n].Cells[2].Value.ToString();
                 FechaNac_Date.Value = Convert.ToDateTime(dataGridView1.Rows[n].Cells[3].Value);
@@ -82,6 +83,11 @@ namespace Control_Empleados
                 FechaIng_Date.Value = Convert.ToDateTime(dataGridView1.Rows[n].Cells[8].Value);
                 Sueldo_TB.Text = dataGridView1.Rows[n].Cells[9].Value.ToString();
                 Estado_TB.Text = dataGridView1.Rows[n].Cells[10].Value.ToString();
+
+                RRHHEntities db = new RRHHEntities();
+                db.Empleados emp = new DBConcur
+                //db.Empleados.AsQueryable().First();
+
 
 
             }
