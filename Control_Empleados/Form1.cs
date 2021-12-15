@@ -57,7 +57,8 @@ namespace Control_Empleados
             RRHHEntities db = new RRHHEntities();
             var datadata = db.Empleados.AsQueryable().Where(w => w.Cedula == Ced_TB.Text || w.Nombre.Contains(Nombre_TB.Text));
             dataGridView1.DataSource = datadata.ToList();
-            dataGridView1.Columns.Remove("Foto");
+            //dataGridView1.Columns.Remove("Foto");
+            dataGridView1.Columns["Foto"].Visible = false;
         }
 
         private void button1_Click_2(object sender, EventArgs e)
@@ -83,13 +84,9 @@ namespace Control_Empleados
                 FechaIng_Date.Value = Convert.ToDateTime(dataGridView1.Rows[n].Cells[8].Value);
                 Sueldo_TB.Text = dataGridView1.Rows[n].Cells[9].Value.ToString();
                 Estado_TB.Text = dataGridView1.Rows[n].Cells[10].Value.ToString();
-
-                RRHHEntities db = new RRHHEntities();
-                db.Empleados emp = new DBConcur
-                //db.Empleados.AsQueryable().First();
-
-
-
+                byte[] img = (Byte[])dataGridView1.Rows[n].Cells[11].Value;
+                MemoryStream mem = new MemoryStream(img);
+                pictureBox1.Image = Image.FromStream(mem);
             }
         }
     }
