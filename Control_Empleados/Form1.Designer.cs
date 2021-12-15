@@ -53,13 +53,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.FotoSel_BT = new System.Windows.Forms.Button();
             this.Registrar_BT = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Consul_BT = new System.Windows.Forms.Button();
+            this.GuardarMod_BT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ID_LB
             // 
             this.ID_LB.AutoSize = true;
-            this.ID_LB.Location = new System.Drawing.Point(186, 31);
+            this.ID_LB.Location = new System.Drawing.Point(168, 31);
             this.ID_LB.Name = "ID_LB";
             this.ID_LB.Size = new System.Drawing.Size(85, 13);
             this.ID_LB.TabIndex = 0;
@@ -78,7 +82,7 @@
             // ID_TB
             // 
             this.ID_TB.Enabled = false;
-            this.ID_TB.Location = new System.Drawing.Point(294, 24);
+            this.ID_TB.Location = new System.Drawing.Point(276, 24);
             this.ID_TB.Name = "ID_TB";
             this.ID_TB.ReadOnly = true;
             this.ID_TB.Size = new System.Drawing.Size(147, 20);
@@ -86,7 +90,7 @@
             // 
             // Ced_TB
             // 
-            this.Ced_TB.Location = new System.Drawing.Point(294, 51);
+            this.Ced_TB.Location = new System.Drawing.Point(276, 51);
             this.Ced_TB.Name = "Ced_TB";
             this.Ced_TB.Size = new System.Drawing.Size(147, 20);
             this.Ced_TB.TabIndex = 4;
@@ -94,7 +98,7 @@
             // Ced_LB
             // 
             this.Ced_LB.AutoSize = true;
-            this.Ced_LB.Location = new System.Drawing.Point(186, 58);
+            this.Ced_LB.Location = new System.Drawing.Point(168, 58);
             this.Ced_LB.Name = "Ced_LB";
             this.Ced_LB.Size = new System.Drawing.Size(40, 13);
             this.Ced_LB.TabIndex = 3;
@@ -102,7 +106,7 @@
             // 
             // Nombre_TB
             // 
-            this.Nombre_TB.Location = new System.Drawing.Point(294, 77);
+            this.Nombre_TB.Location = new System.Drawing.Point(276, 77);
             this.Nombre_TB.Name = "Nombre_TB";
             this.Nombre_TB.Size = new System.Drawing.Size(147, 20);
             this.Nombre_TB.TabIndex = 6;
@@ -110,7 +114,7 @@
             // Nombre_LB
             // 
             this.Nombre_LB.AutoSize = true;
-            this.Nombre_LB.Location = new System.Drawing.Point(186, 84);
+            this.Nombre_LB.Location = new System.Drawing.Point(168, 84);
             this.Nombre_LB.Name = "Nombre_LB";
             this.Nombre_LB.Size = new System.Drawing.Size(44, 13);
             this.Nombre_LB.TabIndex = 5;
@@ -119,7 +123,7 @@
             // FechaNac_LB
             // 
             this.FechaNac_LB.AutoSize = true;
-            this.FechaNac_LB.Location = new System.Drawing.Point(186, 108);
+            this.FechaNac_LB.Location = new System.Drawing.Point(168, 108);
             this.FechaNac_LB.Name = "FechaNac_LB";
             this.FechaNac_LB.Size = new System.Drawing.Size(108, 13);
             this.FechaNac_LB.TabIndex = 7;
@@ -127,7 +131,7 @@
             // 
             // Direccion_TB
             // 
-            this.Direccion_TB.Location = new System.Drawing.Point(294, 128);
+            this.Direccion_TB.Location = new System.Drawing.Point(276, 128);
             this.Direccion_TB.Name = "Direccion_TB";
             this.Direccion_TB.Size = new System.Drawing.Size(147, 20);
             this.Direccion_TB.TabIndex = 10;
@@ -135,7 +139,7 @@
             // Direccion_LB
             // 
             this.Direccion_LB.AutoSize = true;
-            this.Direccion_LB.Location = new System.Drawing.Point(186, 135);
+            this.Direccion_LB.Location = new System.Drawing.Point(168, 135);
             this.Direccion_LB.Name = "Direccion_LB";
             this.Direccion_LB.Size = new System.Drawing.Size(52, 13);
             this.Direccion_LB.TabIndex = 9;
@@ -144,14 +148,14 @@
             // FechaNac_Date
             // 
             this.FechaNac_Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechaNac_Date.Location = new System.Drawing.Point(294, 102);
+            this.FechaNac_Date.Location = new System.Drawing.Point(276, 102);
             this.FechaNac_Date.Name = "FechaNac_Date";
             this.FechaNac_Date.Size = new System.Drawing.Size(147, 20);
             this.FechaNac_Date.TabIndex = 11;
             // 
             // Departa_TB
             // 
-            this.Departa_TB.Location = new System.Drawing.Point(294, 159);
+            this.Departa_TB.Location = new System.Drawing.Point(276, 159);
             this.Departa_TB.Name = "Departa_TB";
             this.Departa_TB.Size = new System.Drawing.Size(147, 20);
             this.Departa_TB.TabIndex = 13;
@@ -159,7 +163,7 @@
             // Depart_LB
             // 
             this.Depart_LB.AutoSize = true;
-            this.Depart_LB.Location = new System.Drawing.Point(186, 166);
+            this.Depart_LB.Location = new System.Drawing.Point(168, 166);
             this.Depart_LB.Name = "Depart_LB";
             this.Depart_LB.Size = new System.Drawing.Size(74, 13);
             this.Depart_LB.TabIndex = 12;
@@ -167,7 +171,7 @@
             // 
             // Puesto_TB
             // 
-            this.Puesto_TB.Location = new System.Drawing.Point(294, 184);
+            this.Puesto_TB.Location = new System.Drawing.Point(276, 184);
             this.Puesto_TB.Name = "Puesto_TB";
             this.Puesto_TB.Size = new System.Drawing.Size(147, 20);
             this.Puesto_TB.TabIndex = 15;
@@ -175,7 +179,7 @@
             // Puesto_LB
             // 
             this.Puesto_LB.AutoSize = true;
-            this.Puesto_LB.Location = new System.Drawing.Point(186, 191);
+            this.Puesto_LB.Location = new System.Drawing.Point(168, 191);
             this.Puesto_LB.Name = "Puesto_LB";
             this.Puesto_LB.Size = new System.Drawing.Size(40, 13);
             this.Puesto_LB.TabIndex = 14;
@@ -184,7 +188,7 @@
             // FechaIng_Date
             // 
             this.FechaIng_Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechaIng_Date.Location = new System.Drawing.Point(294, 243);
+            this.FechaIng_Date.Location = new System.Drawing.Point(276, 243);
             this.FechaIng_Date.Name = "FechaIng_Date";
             this.FechaIng_Date.Size = new System.Drawing.Size(147, 20);
             this.FechaIng_Date.TabIndex = 17;
@@ -192,7 +196,7 @@
             // FechaIng_LB
             // 
             this.FechaIng_LB.AutoSize = true;
-            this.FechaIng_LB.Location = new System.Drawing.Point(186, 249);
+            this.FechaIng_LB.Location = new System.Drawing.Point(168, 249);
             this.FechaIng_LB.Name = "FechaIng_LB";
             this.FechaIng_LB.Size = new System.Drawing.Size(90, 13);
             this.FechaIng_LB.TabIndex = 16;
@@ -200,7 +204,7 @@
             // 
             // Supervi_TB
             // 
-            this.Supervi_TB.Location = new System.Drawing.Point(294, 214);
+            this.Supervi_TB.Location = new System.Drawing.Point(276, 214);
             this.Supervi_TB.Name = "Supervi_TB";
             this.Supervi_TB.Size = new System.Drawing.Size(147, 20);
             this.Supervi_TB.TabIndex = 19;
@@ -208,7 +212,7 @@
             // Supervi_LB
             // 
             this.Supervi_LB.AutoSize = true;
-            this.Supervi_LB.Location = new System.Drawing.Point(186, 221);
+            this.Supervi_LB.Location = new System.Drawing.Point(168, 221);
             this.Supervi_LB.Name = "Supervi_LB";
             this.Supervi_LB.Size = new System.Drawing.Size(69, 13);
             this.Supervi_LB.TabIndex = 18;
@@ -216,7 +220,7 @@
             // 
             // Sueldo_TB
             // 
-            this.Sueldo_TB.Location = new System.Drawing.Point(294, 271);
+            this.Sueldo_TB.Location = new System.Drawing.Point(276, 271);
             this.Sueldo_TB.Name = "Sueldo_TB";
             this.Sueldo_TB.Size = new System.Drawing.Size(147, 20);
             this.Sueldo_TB.TabIndex = 21;
@@ -224,7 +228,7 @@
             // Sueldo_LB
             // 
             this.Sueldo_LB.AutoSize = true;
-            this.Sueldo_LB.Location = new System.Drawing.Point(186, 278);
+            this.Sueldo_LB.Location = new System.Drawing.Point(168, 278);
             this.Sueldo_LB.Name = "Sueldo_LB";
             this.Sueldo_LB.Size = new System.Drawing.Size(40, 13);
             this.Sueldo_LB.TabIndex = 20;
@@ -232,7 +236,7 @@
             // 
             // Estado_TB
             // 
-            this.Estado_TB.Location = new System.Drawing.Point(294, 300);
+            this.Estado_TB.Location = new System.Drawing.Point(276, 300);
             this.Estado_TB.Name = "Estado_TB";
             this.Estado_TB.Size = new System.Drawing.Size(147, 20);
             this.Estado_TB.TabIndex = 23;
@@ -240,7 +244,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(186, 307);
+            this.label1.Location = new System.Drawing.Point(168, 307);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 22;
@@ -266,11 +270,50 @@
             this.Registrar_BT.UseVisualStyleBackColor = true;
             this.Registrar_BT.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(476, 24);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(597, 296);
+            this.dataGridView1.TabIndex = 26;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // Consul_BT
+            // 
+            this.Consul_BT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Consul_BT.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Consul_BT.Location = new System.Drawing.Point(476, 340);
+            this.Consul_BT.Name = "Consul_BT";
+            this.Consul_BT.Size = new System.Drawing.Size(113, 23);
+            this.Consul_BT.TabIndex = 27;
+            this.Consul_BT.Text = "Consultar";
+            this.Consul_BT.UseVisualStyleBackColor = true;
+            this.Consul_BT.Click += new System.EventHandler(this.Consul_BT_Click);
+            // 
+            // GuardarMod_BT
+            // 
+            this.GuardarMod_BT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.GuardarMod_BT.Location = new System.Drawing.Point(595, 340);
+            this.GuardarMod_BT.Name = "GuardarMod_BT";
+            this.GuardarMod_BT.Size = new System.Drawing.Size(113, 23);
+            this.GuardarMod_BT.TabIndex = 28;
+            this.GuardarMod_BT.Text = "Guardar Cambios";
+            this.GuardarMod_BT.UseVisualStyleBackColor = true;
+            this.GuardarMod_BT.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 398);
+            this.ClientSize = new System.Drawing.Size(1085, 371);
+            this.Controls.Add(this.GuardarMod_BT);
+            this.Controls.Add(this.Consul_BT);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Registrar_BT);
             this.Controls.Add(this.FotoSel_BT);
             this.Controls.Add(this.Estado_TB);
@@ -299,6 +342,7 @@
             this.Name = "Form1";
             this.Text = "Sistema De Control De Empleados";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,6 +375,9 @@
         private System.Windows.Forms.Button FotoSel_BT;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Registrar_BT;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button Consul_BT;
+        private System.Windows.Forms.Button GuardarMod_BT;
     }
 }
 
