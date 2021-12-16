@@ -56,6 +56,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Consul_BT = new System.Windows.Forms.Button();
             this.GuardarMod_BT = new System.Windows.Forms.Button();
+            this.Limpiar_BT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -300,17 +301,29 @@
             this.GuardarMod_BT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.GuardarMod_BT.Location = new System.Drawing.Point(595, 340);
             this.GuardarMod_BT.Name = "GuardarMod_BT";
-            this.GuardarMod_BT.Size = new System.Drawing.Size(113, 23);
+            this.GuardarMod_BT.Size = new System.Drawing.Size(102, 23);
             this.GuardarMod_BT.TabIndex = 28;
             this.GuardarMod_BT.Text = "Guardar Cambios";
             this.GuardarMod_BT.UseVisualStyleBackColor = true;
             this.GuardarMod_BT.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // Limpiar_BT
+            // 
+            this.Limpiar_BT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Limpiar_BT.Location = new System.Drawing.Point(703, 340);
+            this.Limpiar_BT.Name = "Limpiar_BT";
+            this.Limpiar_BT.Size = new System.Drawing.Size(75, 23);
+            this.Limpiar_BT.TabIndex = 29;
+            this.Limpiar_BT.Text = "Limpiar";
+            this.Limpiar_BT.UseVisualStyleBackColor = true;
+            this.Limpiar_BT.Click += new System.EventHandler(this.Limpiar_BT_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1085, 371);
+            this.Controls.Add(this.Limpiar_BT);
             this.Controls.Add(this.GuardarMod_BT);
             this.Controls.Add(this.Consul_BT);
             this.Controls.Add(this.dataGridView1);
@@ -378,6 +391,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Consul_BT;
         private System.Windows.Forms.Button GuardarMod_BT;
+        private System.Windows.Forms.Button Limpiar_BT;
     }
 }
 

@@ -20,12 +20,27 @@ namespace Control_Empleados
             InitializeComponent();
         }
 
-
-
-
         //Aquí declarará todas las variables globales que necesite
-        //int IDRowSelected;
         string RutaFoto;
+
+        //Aquí crearé todos los métodos de la clase Form1
+        static void Limpiar(Control control)
+        {
+            foreach (var c in control.Controls)
+            {
+                if (c is TextBox)
+                {
+                    ((TextBox)c).Clear();
+                }
+                else if (c is DateTime)
+                {
+                    ((DateTimePicker)c).ResetText();
+                }
+                
+            }
+ 
+        }
+        
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog file = new OpenFileDialog();
@@ -50,9 +65,11 @@ namespace Control_Empleados
             Emp.Sueldo = Convert.ToDouble(Sueldo_TB.Text);
             Emp.Estados = Estado_TB.Text;
             Emp.Foto = File.ReadAllBytes(RutaFoto);
+
             hola.Empleados.Add(Emp);
             hola.SaveChanges();
 
+            Limpiar(this);
         }
 
         private void Consul_BT_Click(object sender, EventArgs e)
@@ -66,9 +83,22 @@ namespace Control_Empleados
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-        //    var db = new RRHHEntities();
-            
-        //    db.SaveChanges();
+            var db = new RRHHEntities();
+            var Edita = db.Empleados.FirstOrDefault(w => w.ID == 1);
+
+            Edita.Cedula = Ced_TB.Text;
+            Edita.Nombre = Nombre_TB.Text;
+            Edita.Fecha_Nac = FechaNac_Date.Value;
+            Edita.Direccion = Direccion_TB.Text;
+            Edita.Departamento = Departa_TB.Text;
+            Edita.Puesto = Puesto_TB.Text;
+            Edita.Lider = Supervi_TB.Text;
+            Edita.Fecha_Ing = FechaIng_Date.Value;
+            Edita.Sueldo = Convert.ToDouble(Sueldo_TB.Text);
+            Edita.Estados = Estado_TB.Text;
+            if (RutaFoto != null)
+            {Edita.Foto = File.ReadAllBytes(RutaFoto);}
+            db.SaveChanges();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -76,7 +106,7 @@ namespace Control_Empleados
             int n = e.RowIndex;
             if (n > -1)
             {
-
+                ID_TB.Text = dataGridView1.Rows[n].Cells[0].Value.ToString();
                 Ced_TB.Text = dataGridView1.Rows[n].Cells[1].Value.ToString();
                 Nombre_TB.Text = dataGridView1.Rows[n].Cells[2].Value.ToString();
                 FechaNac_Date.Value = Convert.ToDateTime(dataGridView1.Rows[n].Cells[3].Value);
@@ -91,6 +121,11 @@ namespace Control_Empleados
                 MemoryStream mem = new MemoryStream(img);
                 pictureBox1.Image = Image.FromStream(mem);
             }
+        }
+
+        private void Limpiar_BT_Click(object sender, EventArgs e)
+        {
+            Limpiar(this);
         }
     }
 }
