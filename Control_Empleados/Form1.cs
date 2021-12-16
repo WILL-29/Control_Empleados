@@ -36,8 +36,13 @@ namespace Control_Empleados
                 {
                     ((DateTimePicker)c).ResetText();
                 }
-                
+                else if (c is DataGridView)
+                {
+                    ((DataGridView)c).DataSource = null;
+                    ((DataGridView)c).Refresh();
+                }
             }
+            
  
         }
         
@@ -51,25 +56,35 @@ namespace Control_Empleados
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Model.RRHHEntities hola = new Model.RRHHEntities();
-            var Emp = new Model.Empleado();
+            if (Sueldo_TB.Text.Any(x=> !char.IsNumber(x)))
+            {
+                errorProvider1.SetError(Sueldo_TB, "Solo debe introducir números");
+            }
+            else
+            {
+                Model.RRHHEntities hola = new Model.RRHHEntities();
+                var Emp = new Model.Empleado();
 
-            Emp.Cedula = Ced_TB.Text;
-            Emp.Nombre = Nombre_TB.Text;
-            Emp.Fecha_Nac = FechaNac_Date.Value;
-            Emp.Direccion = Direccion_TB.Text;
-            Emp.Departamento = Departa_TB.Text;
-            Emp.Puesto = Puesto_TB.Text;
-            Emp.Lider = Supervi_TB.Text;
-            Emp.Fecha_Ing = FechaIng_Date.Value;
-            Emp.Sueldo = Convert.ToDouble(Sueldo_TB.Text);
-            Emp.Estados = Estado_TB.Text;
-            Emp.Foto = File.ReadAllBytes(RutaFoto);
+                Emp.Cedula = Ced_TB.Text;
+                Emp.Nombre = Nombre_TB.Text;
+                Emp.Fecha_Nac = FechaNac_Date.Value;
+                Emp.Direccion = Direccion_TB.Text;
+                Emp.Departamento = Departa_TB.Text;
+                Emp.Puesto = Puesto_TB.Text;
+                Emp.Lider = Supervi_TB.Text;
+                Emp.Fecha_Ing = FechaIng_Date.Value;
+                Emp.Sueldo = Convert.ToDouble(Sueldo_TB.Text);
+                Emp.Estados = Estado_TB.Text;
+                //Emp.Foto = File.ReadAllBytes(RutaFoto);
 
-            hola.Empleados.Add(Emp);
-            hola.SaveChanges();
+                hola.Empleados.Add(Emp);
+                hola.SaveChanges();
 
-            Limpiar(this);
+                Limpiar(this);
+            }
+
+
+           
         }
 
         private void Consul_BT_Click(object sender, EventArgs e)
@@ -77,28 +92,37 @@ namespace Control_Empleados
             RRHHEntities db = new RRHHEntities();
             var datadata = db.Empleados.AsQueryable().Where(w => w.Cedula == Ced_TB.Text || w.Nombre.Contains(Nombre_TB.Text));
             dataGridView1.DataSource = datadata.ToList();
-            //dataGridView1.Columns.Remove("Foto");
             dataGridView1.Columns["Foto"].Visible = false;
         }
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            var db = new RRHHEntities();
-            var Edita = db.Empleados.FirstOrDefault(w => w.ID == 1);
+            if (ID_TB.Text == "")
+            {
+                MessageBox.Show("No ha realizado ningún cambio en ningún registro", "Atención", 0);
+            }
+            else
+            {
+                var db = new RRHHEntities();
+                var Edita = db.Empleados.FirstOrDefault(w => w.ID == 1);
 
-            Edita.Cedula = Ced_TB.Text;
-            Edita.Nombre = Nombre_TB.Text;
-            Edita.Fecha_Nac = FechaNac_Date.Value;
-            Edita.Direccion = Direccion_TB.Text;
-            Edita.Departamento = Departa_TB.Text;
-            Edita.Puesto = Puesto_TB.Text;
-            Edita.Lider = Supervi_TB.Text;
-            Edita.Fecha_Ing = FechaIng_Date.Value;
-            Edita.Sueldo = Convert.ToDouble(Sueldo_TB.Text);
-            Edita.Estados = Estado_TB.Text;
-            if (RutaFoto != null)
-            {Edita.Foto = File.ReadAllBytes(RutaFoto);}
-            db.SaveChanges();
+                Edita.Cedula = Ced_TB.Text;
+                Edita.Nombre = Nombre_TB.Text;
+                Edita.Fecha_Nac = FechaNac_Date.Value;
+                Edita.Direccion = Direccion_TB.Text;
+                Edita.Departamento = Departa_TB.Text;
+                Edita.Puesto = Puesto_TB.Text;
+                Edita.Lider = Supervi_TB.Text;
+                Edita.Fecha_Ing = FechaIng_Date.Value;
+                Edita.Sueldo = Convert.ToDouble(Sueldo_TB.Text);
+                Edita.Estados = Estado_TB.Text;
+                if (RutaFoto != null)
+                { Edita.Foto = File.ReadAllBytes(RutaFoto); }
+                db.SaveChanges();
+                Limpiar(this);
+                MessageBox.Show("Cambios realizados correctamente", "Atención", 0);
+            }
+            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -117,9 +141,16 @@ namespace Control_Empleados
                 FechaIng_Date.Value = Convert.ToDateTime(dataGridView1.Rows[n].Cells[8].Value);
                 Sueldo_TB.Text = dataGridView1.Rows[n].Cells[9].Value.ToString();
                 Estado_TB.Text = dataGridView1.Rows[n].Cells[10].Value.ToString();
-                byte[] img = (Byte[])dataGridView1.Rows[n].Cells[11].Value;
-                MemoryStream mem = new MemoryStream(img);
-                pictureBox1.Image = Image.FromStream(mem);
+                if (dataGridView1.Rows[n].Cells[11].Value != null)
+                {
+                    byte[] img = (Byte[])dataGridView1.Rows[n].Cells[11].Value;
+                    MemoryStream mem = new MemoryStream(img);
+                    pictureBox1.Image = Image.FromStream(mem);
+                }
+                else
+                {
+                    pictureBox1.Image = null;
+                }
             }
         }
 
