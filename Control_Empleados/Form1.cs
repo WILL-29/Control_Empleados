@@ -41,6 +41,11 @@ namespace Control_Empleados
                     ((DataGridView)c).DataSource = null;
                     ((DataGridView)c).Refresh();
                 }
+                else if (c is PictureBox)
+                {
+                    ((PictureBox)c).Image = null;
+                }
+
             }
             
  
@@ -57,8 +62,10 @@ namespace Control_Empleados
         private void button1_Click_1(object sender, EventArgs e)
         {
             if (Sueldo_TB.Text.Any(x=> !char.IsNumber(x)))
+               errorProvider1.SetError(Sueldo_TB, "Solo debe introducir números");
+            else if (Ced_TB.Text == "" || Nombre_TB.Text == "" || Puesto_TB.Text == "" || Estado_TB.Text == "" || Sueldo_TB.Text == "")
             {
-                errorProvider1.SetError(Sueldo_TB, "Solo debe introducir números");
+                MessageBox.Show("Debe rellenar los campos cédula, Nombre, Puesto, Estado y Sueldo", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -75,11 +82,9 @@ namespace Control_Empleados
                 Emp.Fecha_Ing = FechaIng_Date.Value;
                 Emp.Sueldo = Convert.ToDouble(Sueldo_TB.Text);
                 Emp.Estados = Estado_TB.Text;
-                //Emp.Foto = File.ReadAllBytes(RutaFoto);
-
                 hola.Empleados.Add(Emp);
                 hola.SaveChanges();
-
+                MessageBox.Show("El Empleado ha sido agregado correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 Limpiar(this);
             }
 
@@ -99,12 +104,19 @@ namespace Control_Empleados
         {
             if (ID_TB.Text == "")
             {
-                MessageBox.Show("No ha realizado ningún cambio en ningún registro", "Atención", 0);
+                MessageBox.Show("No ha seleccionado ningún registor para modificar","Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (Sueldo_TB.Text.Any(x => !char.IsNumber(x)))
+                errorProvider1.SetError(Sueldo_TB, "Solo debe introducir números");
+            else if (Ced_TB.Text == "" || Nombre_TB.Text == "" || Puesto_TB.Text == "" || Estado_TB.Text == "" || Sueldo_TB.Text == "")
+            {
+                MessageBox.Show("Debe rellenar los campos cédula, Nombre, Puesto, Estado y Sueldo", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 var db = new RRHHEntities();
-                var Edita = db.Empleados.FirstOrDefault(w => w.ID == 1);
+                int id = Convert.ToInt32(ID_TB.Text);
+                var Edita = db.Empleados.FirstOrDefault(w => w.ID == id);
 
                 Edita.Cedula = Ced_TB.Text;
                 Edita.Nombre = Nombre_TB.Text;
@@ -120,7 +132,7 @@ namespace Control_Empleados
                 { Edita.Foto = File.ReadAllBytes(RutaFoto); }
                 db.SaveChanges();
                 Limpiar(this);
-                MessageBox.Show("Cambios realizados correctamente", "Atención", 0);
+                MessageBox.Show("Cambios realizados correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             
         }
@@ -157,6 +169,33 @@ namespace Control_Empleados
         private void Limpiar_BT_Click(object sender, EventArgs e)
         {
             Limpiar(this);
+        }
+
+        private void Eliminar_BT_Click(object sender, EventArgs e)
+        {
+            if (ID_TB.Text == "")
+            {
+                MessageBox.Show("No ha realizado ningún cambio en ningún registro", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                var db = new RRHHEntities();
+                int id = Convert.ToInt32(ID_TB.Text);
+                var Empeli = db.Empleados.FirstOrDefault(w => w.ID == id);
+                if (Empeli != null)
+                {
+                    db.Empleados.Remove(Empeli);
+                    db.SaveChanges();
+                    MessageBox.Show("El empleado ha sido eliminado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                Limpiar(this);
+            }
+        }
+
+        private void Estado_TB_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ID_LB = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ID_TB = new System.Windows.Forms.TextBox();
@@ -59,6 +60,7 @@
             this.GuardarMod_BT = new System.Windows.Forms.Button();
             this.Limpiar_BT = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Eliminar_BT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -75,6 +77,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(28, 31);
             this.pictureBox1.Name = "pictureBox1";
@@ -244,6 +247,7 @@
             this.Estado_TB.Name = "Estado_TB";
             this.Estado_TB.Size = new System.Drawing.Size(147, 20);
             this.Estado_TB.TabIndex = 10;
+            this.Estado_TB.TextChanged += new System.EventHandler(this.Estado_TB_TextChanged);
             // 
             // label1
             // 
@@ -279,6 +283,7 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(476, 24);
             this.dataGridView1.Name = "dataGridView1";
@@ -313,9 +318,9 @@
             // Limpiar_BT
             // 
             this.Limpiar_BT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Limpiar_BT.Location = new System.Drawing.Point(703, 340);
+            this.Limpiar_BT.Location = new System.Drawing.Point(788, 340);
             this.Limpiar_BT.Name = "Limpiar_BT";
-            this.Limpiar_BT.Size = new System.Drawing.Size(75, 23);
+            this.Limpiar_BT.Size = new System.Drawing.Size(79, 23);
             this.Limpiar_BT.TabIndex = 15;
             this.Limpiar_BT.Text = "Limpiar";
             this.Limpiar_BT.UseVisualStyleBackColor = true;
@@ -325,11 +330,24 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // Eliminar_BT
+            // 
+            this.Eliminar_BT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Eliminar_BT.Location = new System.Drawing.Point(703, 340);
+            this.Eliminar_BT.Name = "Eliminar_BT";
+            this.Eliminar_BT.Size = new System.Drawing.Size(79, 23);
+            this.Eliminar_BT.TabIndex = 27;
+            this.Eliminar_BT.Text = "Eliminar";
+            this.Eliminar_BT.UseVisualStyleBackColor = true;
+            this.Eliminar_BT.Click += new System.EventHandler(this.Eliminar_BT_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1085, 371);
+            this.Controls.Add(this.Eliminar_BT);
             this.Controls.Add(this.Limpiar_BT);
             this.Controls.Add(this.GuardarMod_BT);
             this.Controls.Add(this.Consul_BT);
@@ -359,6 +377,8 @@
             this.Controls.Add(this.ID_TB);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ID_LB);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Sistema De Control De Empleados";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -401,6 +421,7 @@
         private System.Windows.Forms.Button GuardarMod_BT;
         private System.Windows.Forms.Button Limpiar_BT;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button Eliminar_BT;
     }
 }
 
