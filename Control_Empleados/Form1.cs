@@ -47,8 +47,6 @@ namespace Control_Empleados
                 }
 
             }
-            
- 
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -86,10 +84,7 @@ namespace Control_Empleados
                 hola.SaveChanges();
                 MessageBox.Show("El Empleado ha sido agregado correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 Limpiar(this);
-            }
-
-
-           
+            }  
         }
 
         private void Consul_BT_Click(object sender, EventArgs e)
