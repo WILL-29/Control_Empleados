@@ -61,6 +61,7 @@
             this.Limpiar_BT = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Eliminar_BT = new System.Windows.Forms.Button();
+            this.Reporte_BT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -341,12 +342,23 @@
             this.Eliminar_BT.UseVisualStyleBackColor = true;
             this.Eliminar_BT.Click += new System.EventHandler(this.Eliminar_BT_Click);
             // 
+            // Reporte_BT
+            // 
+            this.Reporte_BT.Location = new System.Drawing.Point(873, 340);
+            this.Reporte_BT.Name = "Reporte_BT";
+            this.Reporte_BT.Size = new System.Drawing.Size(75, 23);
+            this.Reporte_BT.TabIndex = 28;
+            this.Reporte_BT.Text = "Reporte";
+            this.Reporte_BT.UseVisualStyleBackColor = true;
+            this.Reporte_BT.Click += new System.EventHandler(this.Reporte_BT_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1085, 371);
+            this.Controls.Add(this.Reporte_BT);
             this.Controls.Add(this.Eliminar_BT);
             this.Controls.Add(this.Limpiar_BT);
             this.Controls.Add(this.GuardarMod_BT);
@@ -381,6 +393,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Sistema De Control De Empleados";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -422,6 +435,7 @@
         private System.Windows.Forms.Button Limpiar_BT;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button Eliminar_BT;
+        private System.Windows.Forms.Button Reporte_BT;
     }
 }
 

@@ -16,5 +16,11 @@ namespace Control_Empleados
         {
             InitializeComponent();
         }
+
+        private void From2_Reporte_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

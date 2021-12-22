@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.IO;
 using Control_Empleados.Model;
 
-
 namespace Control_Empleados
 {
     public partial class Form1 : Form
@@ -191,6 +190,17 @@ namespace Control_Empleados
         private void Estado_TB_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Reporte_BT_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //From2_Reporte fr = new From2_Reporte();
+            
         }
     }
 }
