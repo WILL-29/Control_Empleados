@@ -71,7 +71,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>0.92583in</Top>
-        <Left>0.26958in</Left>
+        <Left>1.66541in</Left>
         <Height>0.41667in</Height>
         <Width>1.23958in</Width>
         <ZIndex>2</ZIndex>
@@ -214,6 +214,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -820,10 +821,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
         <Top>1.78in</Top>
         <Left>0.26958in</Left>
         <Height>0.5in</Height>
-        <Width>9.70139in</Width>
+        <Width>9.70138in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -848,6 +850,78 @@
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="Control_EmpleadosModel">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>3367050c-2e61-41fe-8446-8c9d148c14a3</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>Control_EmpleadosModel</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Cedula">
+          <DataField>Cedula</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Departamento">
+          <DataField>Departamento</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Direccion">
+          <DataField>Direccion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Estados">
+          <DataField>Estados</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fecha_Ing">
+          <DataField>Fecha_Ing</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Fecha_Nac">
+          <DataField>Fecha_Nac</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Foto">
+          <DataField>Foto</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Lider">
+          <DataField>Lider</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Puesto">
+          <DataField>Puesto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sueldo">
+          <DataField>Sueldo</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Control_Empleados.Model</rd:DataSetName>
+        <rd:TableName>Empleado</rd:TableName>
+        <rd:ObjectDataSourceType>Control_Empleados.Model.Empleado, Control_Empleados, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <EmbeddedImages>
     <EmbeddedImage Name="Imagen">
       <MIMEType>image/png</MIMEType>

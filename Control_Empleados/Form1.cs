@@ -194,7 +194,35 @@ namespace Control_Empleados
 
         private void Reporte_BT_Click(object sender, EventArgs e)
         {
+            var Datos = new List<Empleado>();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                var dato = new Empleado();
+                dato.ID = (int)dataGridView1.Rows[i].Cells[0].Value;
+                dato.Cedula = (string)dataGridView1.Rows[i].Cells[1].Value;
+                dato.Nombre = (string)dataGridView1.Rows[i].Cells[2].Value;
+                dato.Fecha_Nac = (DateTime)dataGridView1.Rows[i].Cells[3].Value;
+                dato.Direccion = (string)dataGridView1.Rows[i].Cells[4].Value;
+                dato.Departamento = (string)dataGridView1.Rows[i].Cells[5].Value;
+                dato.Puesto = (string)dataGridView1.Rows[i].Cells[6].Value;
+                dato.Lider = (string)dataGridView1.Rows[i].Cells[7].Value;
+                dato.Fecha_Ing = (DateTime)dataGridView1.Rows[i].Cells[8].Value;
+                dato.Sueldo = (double)dataGridView1.Rows[i].Cells[9].Value;
+                dato.Estados = (string)dataGridView1.Rows[i].Cells[10].Value;
+                Datos.Add(dato);
+            }
+            var FormRep = new From2_Reporte();
+
             
+
+
+            FormRep.Show();
+
+            //foreach (var i in dataGridView1.Rows.)
+            //{
+            //    var dato = new Empleado();
+            //    dato.Cedula = (string)dataGridView1.Rows[i].
+            //}
         }
 
         private void Form1_Load(object sender, EventArgs e)
