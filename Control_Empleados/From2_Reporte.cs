@@ -19,13 +19,16 @@ namespace Control_Empleados
         {
             InitializeComponent();
         }
-
+        public List<Empleado> DataForm2 { get; set; }
         private void From2_Reporte_Load(object sender, EventArgs e)
         {
+            
+
+
             reportViewer1.LocalReport.DataSources.Clear();
             ReportDataSource fuente = new ReportDataSource();
-            //fuente = 
-            reportViewer1.LocalReport.DataSources.Add(fuente);
+            
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", DataForm2));
             reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }

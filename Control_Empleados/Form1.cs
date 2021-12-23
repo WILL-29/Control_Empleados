@@ -212,11 +212,8 @@ namespace Control_Empleados
                 Datos.Add(dato);
             }
             var FormRep = new From2_Reporte();
-
-            
-
-
-            FormRep.Show();
+            FormRep.DataForm2 = Datos;
+            FormRep.ShowDialog();
 
             //foreach (var i in dataGridView1.Rows.)
             //{
