@@ -22,9 +22,6 @@ namespace Control_Empleados
         public List<Empleado> DataForm2 { get; set; }
         private void From2_Reporte_Load(object sender, EventArgs e)
         {
-            
-
-
             reportViewer1.LocalReport.DataSources.Clear();
             ReportDataSource fuente = new ReportDataSource();
             
@@ -32,7 +29,6 @@ namespace Control_Empleados
             reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
-
         private void reportViewer1_Load(object sender, EventArgs e)
         {
             
