@@ -789,7 +789,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -821,6 +820,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <OmitBorderOnPageBreak>true</OmitBorderOnPageBreak>
         <DataSetName>DataSet1</DataSetName>
         <Top>1.78in</Top>
         <Left>0.26958in</Left>

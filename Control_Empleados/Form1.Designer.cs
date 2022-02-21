@@ -344,6 +344,7 @@
             // 
             // Reporte_BT
             // 
+            this.Reporte_BT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Reporte_BT.Location = new System.Drawing.Point(873, 340);
             this.Reporte_BT.Name = "Reporte_BT";
             this.Reporte_BT.Size = new System.Drawing.Size(75, 23);
